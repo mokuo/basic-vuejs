@@ -7,16 +7,9 @@ var app = new Vue({
       { id: 3, name: 'ドラゴン', hp: 500 }
     ]
   },
-  methods: {
-    doAdd: function() {
-      var max = this.list.reduce(function(a, b) {
-        return a.id > b.id ? a.id : b.id
-      }, 0)
-      this.list.push({
-        id: max + 1,
-        name: this.name,
-        hp: 500
-      })
-    }
+  created: function() {
+    this.list.forEach(function(item) {
+      this.$set(item, 'active', false)
+    }, this)
   }
 })
