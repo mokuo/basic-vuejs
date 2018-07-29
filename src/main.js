@@ -1,6 +1,8 @@
 var app = new Vue({
   el: '#app',
-  mounted: function() {
-    console.log(this.$refs.hello);
+  methods: {
+    handleClick: function() {
+      alert('クリックしたよ')
+    }
   }
 })
