@@ -7,9 +7,9 @@ var app = new Vue({
       { id: 3, name: 'ドラゴン', hp: 500 }
     ]
   },
-  created: function() {
-    this.list.forEach(function(item) {
-      this.$set(item, 'active', false)
-    }, this)
+  methods: {
+    doAttack: function(index) {
+      this.list[index].hp -= 10
+    }
   }
 })
